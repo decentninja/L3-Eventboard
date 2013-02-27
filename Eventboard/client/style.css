@@ -3,3 +3,9 @@
 header {
 	text-align: center;
 }
+
+.event_grid.event {
+	float: left;
+	margin: 10px;
+	width: 100px;
+}

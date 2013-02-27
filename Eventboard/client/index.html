@@ -4,7 +4,7 @@
 
 <body>
   {{> header}}
-  <div class="container">
+  <div class="event_grid" id="event_grid">
   	{{> events}}
   </div>
 </body>
@@ -17,7 +17,9 @@
 
 <template name="events">
 	{{#each events}}
+	<div class="event">
 		<h3>{{name}}</h3>
 		<p>{{description}}</p>
+	</div>
 	{{/each}}
 </template>
