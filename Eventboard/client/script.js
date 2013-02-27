@@ -7,13 +7,14 @@ Template.events.rendered = function() {
         this._rendered = true
         $('#event_grid').masonry({
     	    itemSelector: '.event',
+            /*
             isAnimated: true,
             isFitWidth: true,
             animationOptions: {
                 duration: 100,
                 easing: 'linear',
                 queue: false
-            }
+            }*/
         });
     } else {
         $('#event_grid').masonry('reload')
