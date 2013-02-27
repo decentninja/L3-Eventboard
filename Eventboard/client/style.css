@@ -5,7 +5,6 @@ header {
 }
 
 .event_grid .event {
-	float: left;
 	margin: 10px;
 	width: 240px;
 	background-color: #FF7BAC;
