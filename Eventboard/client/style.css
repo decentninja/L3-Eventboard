@@ -12,3 +12,7 @@ header {
 	padding-left: 15px;
 	padding-right: 15px;
 }
+
+.event h4 {
+	text-align: center;
+}
