@@ -1,0 +1,5 @@
+
+
+Template.events.events = function() {
+	
+}
