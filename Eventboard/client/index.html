@@ -4,7 +4,9 @@
 
 <body>
   {{> header}}
-  {{> events}}
+  <div class="container">
+  	{{> events}}
+  </div>
 </body>
 
 <template name="header">
@@ -14,5 +16,8 @@
 </template>
 
 <template name="events">
-	
+	{{#each events}}
+		<h3>{{name}}</h3>
+		<p>{{description}}</p>
+	{{/each}}
 </template>
