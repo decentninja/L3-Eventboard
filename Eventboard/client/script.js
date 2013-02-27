@@ -8,6 +8,7 @@ Template.events.rendered = function() {
         $('#event_grid').masonry({
     	    itemSelector: '.event',
             isAnimated: true,
+            isFitWidth: true,
             animationOptions: {
                 duration: 100,
                 easing: 'linear',
