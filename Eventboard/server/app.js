@@ -1,5 +1,5 @@
 Meteor.startup(function () {
-    if (events.find().count() === 0) {
+    if (eventPosts.find().count() === 0) {
       var stuff= [
         {
           "description" : "An event where you can improve your language-skills in a relaxed environment.  Get to know other people with the same interest in language and culture! Lunch is provided.",
@@ -28,6 +28,6 @@ Meteor.startup(function () {
         }
       ]
       for (var i = 0; i < stuff.length; i++)
-        events.insert(stuff[i]);
+        eventPosts.insert(stuff[i]);
     }
 });

@@ -4,7 +4,7 @@ header {
 	text-align: center;
 }
 
-.event_grid .event {
+.event_grid .eventPost {
 	margin: 10px;
 	width: 240px;
 	background-color: #FF7BAC;
@@ -12,6 +12,6 @@ header {
 	padding-right: 15px;
 }
 
-.event h4 {
+.eventPost h4 {
 	text-align: center;
 }

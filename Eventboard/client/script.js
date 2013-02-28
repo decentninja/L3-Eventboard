@@ -1,12 +1,12 @@
-Template.events.data = function() {
-    return events.find({})
+Template.eventPosts.data = function() {
+    return eventPosts.find({})
 }
 
-Template.event.selected = function() {
+Template.eventPost.selected = function() {
     return Session.equals("selected", this._id) ? "selected" : ''
 }
 
-Template.event.events = {
+Template.eventPost.events = {
     "click": function(e) {
         if(Session.equals("selected", this._id)) {
             Session.set("selected", null)
@@ -16,11 +16,11 @@ Template.event.events = {
     }
 }
 
-Template.events.rendered = function() {
+Template.eventPosts.rendered = function() {
     if (!this._rendered) {
         this._rendered = true
         $('#event_grid').masonry({
-    	    itemSelector: '.event',
+    	    itemSelector: '.eventPost',
             isFitWidth: true,
             /*
             isAnimated: true,
