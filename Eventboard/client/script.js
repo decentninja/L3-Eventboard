@@ -1,5 +1,11 @@
 Template.eventPosts.data = function() {
-    return eventPosts.find({})
+    if(Session.get("tags") == [] || Session.get("tags") == null) {
+        return eventPosts.find({})
+    } else {
+        return eventPosts.find({
+            tags: {$all: Session.get("tags")}
+        })
+    }
 }
 
 Template.eventPost.selected = function() {
