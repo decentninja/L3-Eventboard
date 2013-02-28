@@ -10,12 +10,13 @@ var Router = Backbone.Router.extend({
 		}
 	},
 })
-var r = new Router()
+
+var router = new Router()
 
 Meteor.autorun(function() {
 	var tags = Session.get("tags")
 	if(tags != undefined) {
-		r.navigate(tags.join("/"))
+		router.navigate(tags.join("/"))
 	}
 })
 
