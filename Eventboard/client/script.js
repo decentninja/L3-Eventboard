@@ -3,11 +3,12 @@ Template.header.tags = function() {
 }
 
 Template.eventPosts.data = function() {
-    if(Session.get("tags") == [] || Session.get("tags") == null) {
+    var tags = Session.get("tags")
+    if(tags == undefined || tags.length == 0) {
         return eventPosts.find({})
     } else {
         return eventPosts.find({
-            tags: {$all: Session.get("tags")}
+            tags: {$all: tags}
         })
     }
 }
@@ -44,3 +45,13 @@ Template.eventPost.events = {
         }
     }
 }
+
+ Meteor.autorun(function () {
+    var tags = Session.get("tags")
+    if(tags == undefined || tags.length == 0) {
+        document.title = "The Eventboard"
+    } else {
+        console.log("sdf")
+        document.title = "The Eventboard of " + tags.join(" ") + " events";
+    }
+});
