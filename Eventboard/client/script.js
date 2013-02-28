@@ -21,9 +21,9 @@ Template.events.rendered = function() {
         this._rendered = true
         $('#event_grid').masonry({
     	    itemSelector: '.event',
+            isFitWidth: true,
             /*
             isAnimated: true,
-            isFitWidth: true,
             animationOptions: {
                 duration: 100,
                 easing: 'linear',
