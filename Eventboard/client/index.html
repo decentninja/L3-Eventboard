@@ -1,26 +1,52 @@
 <head>
-	<title>The Eventboard of TODO</title>
+	<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
 </head>
 
 <body>
-  {{> header}}
-  <div class="container">
-  	{{> events}}
-  </div>
+	<header class="page-header">
+		{{> header}}
+	</header>
+	<div class="container event_grid" id="event_grid">
+		{{> eventPosts}}
+	</div>
 </body>
 
 <template name="header">
-	<header>
-		<h1>The Eventboard of TODO</h1>
-  	</header>
+	<h1>The Eventboard of</h1>
+	<h2>
+		{{#if tags}}
+			{{#each tags}}
+				<a>{{this}}</a>
+			{{/each}}
+		{{else}}
+			all
+		{{/if}}
+		events
+	</h2>
 </template>
 
-<template name="events">
-	{{#each events}}
-		<h3>{{name}}</h3>
-		<p>{{Date}}</p>
-		<p>{{Location}}</p>
-		<p>{{Organizer}}</p>
-		<p>{{description}}</p>
+<template name="eventPosts">
+	{{#each data}}
+		{{> eventPost}}
 	{{/each}}
+</template>
+
+<template name="eventPost">
+	{{#if selected}}
+		<div class="eventPost" style="background-color: {{color}}; width: 400px; height: 300px;">
+			<h4>{{name}}</h4>
+			<p>{{description}}</p>
+			<p>{{location}}</p>
+			<p>{{date}}</p>
+			<p>{{organizer}}</p>
+		</div>
+	{{else}}
+		<div class="eventPost" style="background-color: {{color}};">
+			<h4>{{name}}</h4>
+			<p>{{description}}</p>
+			<p>{{location}}</p>
+			<p>{{date}}</p>
+			<p>{{organizer}}</p>
+		</div>
+	{{/if}}
 </template>
