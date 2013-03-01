@@ -9,7 +9,8 @@ Meteor.startup(function () {
       		"location" : "KTH Library",
       		"organizer" : "KTH language and communication",
       		"color" : "#BDCCD4",    
-      		"tags" : ["free", "non-alcoholic"] 		
+      		"tags" : ["free", "non-alcoholic"],
+          "imgUrl": "http://media.tumblr.com/tumblr_mbelgcuSll1rwy4eh.gif"
       	},
 		{
 		 	"name" : "Ovve-Gasque", 
