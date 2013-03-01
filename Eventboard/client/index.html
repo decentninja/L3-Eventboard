@@ -1,5 +1,4 @@
 <head>
-	<title>The Eventboard of TODO</title>
 	<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
 	<link rel="icon" href="favicon.ico" type="image/x-icon" />
   	<link id="favicon" rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
@@ -25,13 +24,16 @@
 
 <template name="header">
 	<h1>The Eventboard of</h1>
-	<h3>
-		<a>Free</a>
-		<a>Gasques</a>
-		& <a>Parties</a>
-		in <a>Meta</a>
-		by <a>KTH</a>
-	</h3>
+	<h2>
+		{{#if tags}}
+			{{#each tags}}
+				<a>{{this}}</a>
+			{{/each}}
+		{{else}}
+			all
+		{{/if}}
+		events
+	</h2>
 </template>
 
 <template name="eventPosts">

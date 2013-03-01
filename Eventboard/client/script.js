@@ -1,10 +1,34 @@
+Template.header.tags = function() {
+    return Session.get("tags")
+}
+
 Template.eventPosts.data = function() {
-    if(Session.get("tags") == [] || Session.get("tags") == null) {
+    var tags = Session.get("tags")
+    if(tags == undefined || tags.length == 0) {
         return eventPosts.find({})
     } else {
         return eventPosts.find({
-            tags: {$all: Session.get("tags")}
+            tags: {$all: tags}
         })
+    }
+}
+
+Template.eventPosts.rendered = function() {
+    if (!this._rendered) {
+        this._rendered = true
+        $('#event_grid').masonry({
+            itemSelector: '.eventPost',
+            isFitWidth: true,
+            /*
+            isAnimated: true,
+            animationOptions: {
+                duration: 100,
+                easing: 'linear',
+                queue: false
+            }*/
+        })
+    } else {
+        $('#event_grid').masonry('reload')
     }
 }
 
@@ -22,22 +46,12 @@ Template.eventPost.events = {
     }
 }
 
-Template.eventPosts.rendered = function() {
-    if (!this._rendered) {
-        this._rendered = true
-        $('#event_grid').masonry({
-    	    itemSelector: '.eventPost',
-            isFitWidth: true,
-            /*
-            isAnimated: true,
-            animationOptions: {
-                duration: 100,
-                easing: 'linear',
-                queue: false
-            }*/
-        });
+ Meteor.autorun(function () {
+    var tags = Session.get("tags")
+    if(tags == undefined || tags.length == 0) {
+        document.title = "The Eventboard"
     } else {
-        $('#event_grid').masonry('reload')
+        console.log("sdf")
+        document.title = "The Eventboard of " + tags.join(" ") + " events";
     }
-}
-
+});
