@@ -16,10 +16,10 @@ var router = new Router()
 Meteor.autorun(function() {
 	var tags = Session.get("tags")
 	if(tags != undefined) {
-		router.navigate(tags.join("/"))
+		router.navigate(tags.join("/"), true)
 	}
 })
 
 Meteor.startup(function () {
-  Backbone.history.start({pushState: true});
+	Backbone.history.start({pushState: true});
 });
