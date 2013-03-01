@@ -25,17 +25,21 @@ footer .copyRight {
 }
 
 .date:before {
+	font-weight:bold;
 	content: "Date: ";
 }
 
 .location:before {
+	font-weight:bold;
 	content: "Location: ";
 }
 
 .organizer:before {
+	font-weight:bold;
 	content: "Organizer: ";
 }
 
 .description:before {
+	font-weight:bold;
 	content: "Description: ";
 }
