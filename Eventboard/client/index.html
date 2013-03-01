@@ -44,8 +44,9 @@
 
 <template name="eventPost">
 	{{#if selected}}
-		<div class="eventPost" style="background-color: {{color}}; width: 400px; height: 300px;">
+		<div class="eventPost" style="background-color: {{color}}; width: 400px; height: auto;">
 			<h4>{{name}}</h4>
+			<img src="{{imgUrl}}" width=150>
 			<p>{{description}}</p>
 			<p>{{location}}</p>
 			<p>{{date}}</p>
