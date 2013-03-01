@@ -3,7 +3,7 @@ Meteor.startup(function () {
     if (eventPosts.find().count() === 0) {
       var stuff= [
       	{
-      		"name" : "Language CafÈ - English/French", 
+      		"name" : "Language Caf√© - English/French", 
       		"description" : "An event where you can improve your language-skills in a relaxed environment.  Get to know other people with the same interest in language and culture! Lunch is provided.",
       		"date" : "Every Friday between 12-13:00",
       		"location" : "KTH Library",
@@ -13,10 +13,10 @@ Meteor.startup(function () {
       	},
 		{
 		 	"name" : "Ovve-Gasque", 
-		 	"date" : "2013-11-24 At 18:00 Û clock",
+		 	"date" : "2013-11-24 At 18:00 o clock",
 		 	"location" : "KTH Haninge",
-		 	"organizer" : "Qlubbm‰steriet Haninge",
-		  	"description" : "Celebrate whatever you want with us! Just bring you finest clothingÖOvven!",
+		 	"organizer" : "Qlubbm√§steriet Haninge",
+		  	"description" : "Celebrate whatever you want with us! Just bring you finest clothing‚Ä¶Ovven!",
 		  	"color" : "#3FA9F5",
 		  	"tags" : ["gasque"]
 		},
@@ -24,7 +24,7 @@ Meteor.startup(function () {
 			"name" : "Lunch with Corporate America",
 			"date" : "2013-03-14 Between 12-13:00",
 			"location" : "E1, KTH",
-			"organizer" : "THS N‰ringsliv", 
+			"organizer" : "THS N√§ringsliv", 
 			"description" : "A talk about the future of Corporate America, learn money and eat lunch!",
 			"color" : "#FF931E",
 			"tags" : ["lunch", "non-alcoholic"]
@@ -40,27 +40,27 @@ Meteor.startup(function () {
 		},
 		{
 			"name" : "Game-night", 
-			"date" : "2013-05-23 At 17:17 Û clock",
+			"date" : "2013-05-23 At 17:17 o clock",
 			"location" : "META",
-			"organizer" : "Qulturn‰mnd",
+			"organizer" : "Qulturn√§mnd",
 			"description" : "We have board-games, cards, Magic and candy. What else do you need?",
 			"color" : "#FF7BAC",
 			"tags" : ["non-alcoholic"]
 		},
 		{
 			"name" : "Movie-night",
-			"date" : "2013-05-02 At 20:00 Û clock",
+			"date" : "2013-05-02 At 20:00 o clock",
 			"location" : "Elektro KTH",
-			"organizer" : "Elektros kulturn‰mnd",
+			"organizer" : "Elektros kulturn√§mnd",
 			"description" : "We are going to watch the Star Wars-movies in the Ernst Rister order. It is going to be legendary!",
 			"color" : "#FF7BAC",
 			"tags" : ["non-alcoholic"]
 		},
 		{
 			"name" : "Maffia-gasque",
-			"date" : "2013-03-22 At 19:00 Û clock",
+			"date" : "2013-03-22 At 19:00 o clock",
 			"location" : "Oasen",
-			"organizer" : "Sammh‰llsprogrammet KTH",
+			"organizer" : "Sammh√§llsprogrammet KTH",
 			"description" : "We play the party-game Maffia, while having a great party. It is an offer you cannot refuse!",
 			"color" : "#FF7BAC",
 			"tags" : ["gasque"]
@@ -76,7 +76,7 @@ Meteor.startup(function () {
 		},
 		{
 			"name" : "Ponies-meeting",
-			"date" : "2013-04-18 At 21:00 Û clock",
+			"date" : "2013-04-18 At 21:00 o clock",
 			"location" : "SU",
 			"organizer" : "Ponies fanclub of Sweden",
 			"description" : "Bring all your dolls, let us play!",
@@ -94,7 +94,7 @@ Meteor.startup(function () {
 		},
 		{
 			"name" : "Crash-course in economy",
-			"date" : "2013-04-02 At 16:00 Û clock",
+			"date" : "2013-04-02 At 16:00 o clock",
 			"location" : "Handels",
 			"organizer" : "Handels committe for public affairs",
 			"description" : "We can do fun stuff too!",
@@ -103,7 +103,7 @@ Meteor.startup(function () {
 		},
 		{
 			"name" : "ThursdayPub",
-			"date" : "2013-10-14 At 17 Û clock",
+			"date" : "2013-10-14 At 17 o clock",
 			"location" : "QMisk",
 			"organizer" : "QMisk",
 			"description" : "We have beer, some grub and maybe something else. Big surprise at 11.",
