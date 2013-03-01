@@ -25,6 +25,16 @@ header #tags {
 	vertical-align: middle;
 }
 
+header a.remove-tag-tag:hover:after {
+	border-radius: 20px;
+	color: black;
+	content: "×";
+	position: relative;
+	top: -12px;
+	right: -10px;
+	margin-left: -19px;
+}
+
 header #sort {
 	margin-top: 3px;
 	margin-right: 40px;
