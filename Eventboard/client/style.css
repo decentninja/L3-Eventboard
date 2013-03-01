@@ -20,6 +20,25 @@ footer {
 	text-align: center;
 }
 
+header #tags {
+	display:inline;
+	vertical-align: middle;
+}
+
+header #sort {
+	margin-top: 3px;
+	margin-right: 40px;
+}
+
+header #add-tag {
+	margin-top: 3px;
+	margin-left: 40px;
+}
+
+header .accordion-inner {
+	margin-top: 8px;
+}
+
 footer .copyRight {
 	color:#808080
 }

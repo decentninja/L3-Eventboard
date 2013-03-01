@@ -2,7 +2,7 @@ Template.header.tags = function() {
     return Session.get("tags")
 }
 
-Template.eventPosts.data = function() {
+var filterdPosts = function() {
     var tags = Session.get("tags")
     if(tags == undefined || tags.length == 0) {
         return eventPosts.find({})
@@ -11,6 +11,35 @@ Template.eventPosts.data = function() {
             tags: {$all: tags}
         })
     }
+}
+
+Template.header.allOtherTags = function() {
+    var posts = filterdPosts()
+    var tags = []
+    var sessiontags = Session.get("tags")
+    posts.map(function(post) {
+        post.tags.map(function(tag){
+            if(tags.indexOf(tag) == -1 && sessiontags.indexOf(tag) == -1) {
+                tags.push(tag)
+            }
+        })
+    })
+    return tags
+}
+
+Template.header.events = {
+    "click .add-tag-tag": function(e) {
+        Session.set("tags", Session.get("tags").concat(e.target.text))
+    },
+    "click .remove-tag-tag": function(e) {
+        Session.set("tags", Session.get("tags").filter(function(o) {
+            return o != e.target.text
+        }))
+    }
+}
+
+Template.eventPosts.data = function() {
+    return filterdPosts
 }
 
 Template.eventPosts.rendered = function() {
@@ -51,7 +80,6 @@ Template.eventPost.events = {
     if(tags == undefined || tags.length == 0) {
         document.title = "The Eventboard"
     } else {
-        console.log("sdf")
         document.title = "The Eventboard of " + tags.join(" ") + " events";
     }
 });
