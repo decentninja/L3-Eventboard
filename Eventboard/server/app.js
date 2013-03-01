@@ -19,7 +19,8 @@ Meteor.startup(function () {
 		 	"organizer" : "Qlubbmästeriet Haninge",
 		  	"description" : "Celebrate whatever you want with us! Just bring you finest clothing…Ovven!",
 		  	"color" : "#3FA9F5",
-		  	"tags" : ["gasque"]
+		  	"tags" : ["gasque"],
+        "imgUrl": "http://lh4.ggpht.com/-GQGEHNbfaZE/UB92zVaf32I/AAAAAAAAAFo/8A-QSrqJNoI/44784%252520-%252520animated%252520animation%252520Artist-3dapple%252520centi-pony%252520centipede%252520cuteweird%252520gif%252520Scrunchy_Face%252520Sweetiepede%252520Sweetie_Belle%252520what%252520what_has_science_done%252520wtf.gif"
 		},
 		{
 			"name" : "Lunch with Corporate America",
