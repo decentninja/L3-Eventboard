@@ -3,3 +3,23 @@
 header {
 	text-align: center;
 }
+
+footer {
+	text-align: center;
+}
+
+.event_grid .eventPost {
+	margin: 10px;
+	width: 240px;
+	background-color: #FF7BAC;
+	padding-left: 15px;
+	padding-right: 15px;
+}
+
+.eventPost h4 {
+	text-align: center;
+}
+
+footer .copyRight {
+	color:#808080
+}

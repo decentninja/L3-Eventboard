@@ -110,7 +110,6 @@ Meteor.startup(function () {
 			"color" : "#FF7BAC",
 			"tags" : ["pub"]
 		}];
-	
       for (var i = 0; i < stuff.length; i++)
         eventPosts.insert(stuff[i]);
     }

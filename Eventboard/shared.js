@@ -1,1 +1,1 @@
-var events = new Meteor.Collection("events");
+var eventPosts = new Meteor.Collection("eventPosts");
