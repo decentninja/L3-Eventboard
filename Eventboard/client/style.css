@@ -29,13 +29,13 @@ footer .copyRight {
 }
 
 .location:before {
-	content: "Location";
+	content: "Location: ";
 }
 
 .organizer:before {
-	content: "Organizer";
+	content: "Organizer: ";
 }
 
 .description:before {
-	content: "Description";
+	content: "Description: ";
 }
