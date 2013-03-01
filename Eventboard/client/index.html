@@ -1,16 +1,27 @@
 <head>
 	<title>The Eventboard of TODO</title>
 	<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+	<link rel="icon" href="favicon.ico" type="image/x-icon" />
+  	<link id="favicon" rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
 </head>
 
 <body>
+	<img src="icon"></img>
 	<header class="page-header">
 		{{> header}}
 	</header>
   <div class="container event_grid" id="event_grid">
   	{{> eventPosts}}
   </div>
+  <footer>
+  	{{> copyRight}}
+  </footer>
 </body>
+
+<template name="copyRight">
+	<hr>
+	<p class="copyRight">&copy; 2013 CodeNameEleena, Elegios Viktor Palmkvist, Glassig ,pintjuk Daniil Pintjuk ,sootn Andreas Linn</p>
+</template>
 
 <template name="header">
 	<h1>The Eventboard of</h1>
