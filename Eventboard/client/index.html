@@ -1,5 +1,4 @@
 <head>
-	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
 	<link rel="icon" href="favicon.ico" type="image/x-icon" />
   	<link id="favicon" rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
@@ -47,17 +46,17 @@
 	{{#if selected}}
 		<div class="eventPost" style="background-color: {{color}}; width: 400px; height: 300px;">
 			<h4>{{name}}</h4>
-			<p>{{description}}</p>
-			<p>{{location}}</p>
-			<p>{{date}}</p>
-			<p>{{organizer}}</p>
+			<p class="date">{{date}}</p>
+			<p class="location">{{location}}</p>
+			<p class="organizer">{{organizer}}</p>
+			<p class="description">{{description}}</p>
 		</div>
 	{{else}}
 		<div class="eventPost" style="background-color: {{color}};">
 			<h4>{{name}}</h4>
-			<p>{{location}}</p>
-			<p>{{date}}</p>
-			<p>{{organizer}}</p>
+			<p class="date">{{date}}</p>
+			<p class="location">{{location}}</p>
+			<p class="organizer">{{organizer}}</p>
 		</div>
 	{{/if}}
 </template>

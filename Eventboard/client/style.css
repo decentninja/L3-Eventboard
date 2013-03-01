@@ -23,3 +23,19 @@ footer {
 footer .copyRight {
 	color:#808080
 }
+
+.date:before {
+	content: "Date: ";
+}
+
+.location:before {
+	content: "Location";
+}
+
+.organizer:before {
+	content: "Organizer";
+}
+
+.description:before {
+	content: "Description";
+}
