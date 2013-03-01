@@ -1,6 +1,6 @@
 Meteor.startup(function () {
 // code to run on server at startup
-    if (events.find().count() === 0) {
+    if (eventPosts.find().count() === 0) {
       var stuff= [
       	{
       		"name" : "Language Café - English/French", 
