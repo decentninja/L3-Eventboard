@@ -57,6 +57,10 @@ footer .copyRight {
 	color:#808080
 }
 
+.event_grid .noposts {
+	text-align: center;
+}
+
 .date:before {
 	font-weight:bold;
 	content: "Date: ";

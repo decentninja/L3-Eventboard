@@ -7,9 +7,13 @@ var filterdPosts = function() {
     if(tags == undefined || tags.length == 0) {
         return eventPosts.find({})
     } else {
-        return eventPosts.find({
+        var posts = eventPosts.find({
             tags: {$all: tags}
         })
+        if(posts.count() == 0) {
+            return [];
+        }
+        return posts;
     }
 }
 

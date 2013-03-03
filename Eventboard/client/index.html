@@ -41,20 +41,30 @@
   	</a>
     <div id="add-tag-collapse" class="accordion-body collapse out">
 		<div class="accordion-inner">
-			I want only
-			{{#each allOtherTags}}
-				<a class="add-tag-tag" href="#">{{this}}</a>
-				|
-			{{/each}}
+			{{#if allOtherTags}}
+				I want only
+				{{#each allOtherTags}}
+					<a class="add-tag-tag" href="#">{{this}}</a>
+					|
+				{{/each}}
+			{{else}}
+				Click on tags to remove them for more events. 
+			{{/if}}
 		</div>
     </div>
 
 </template>
 
 <template name="eventPosts">
-	{{#each data}}
-		{{> eventPost}}
-	{{/each}}
+	{{#if data}}
+		{{#each data}}
+			{{> eventPost}}
+		{{/each}}
+	{{else}}
+		<p class="noposts">
+			No events under this tag.
+		</p>
+	{{/if}}
 </template>
 
 <template name="eventPost">
