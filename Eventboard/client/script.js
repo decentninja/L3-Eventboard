@@ -70,12 +70,8 @@ Template.eventPost.selected = function() {
 }
 
 Template.eventPost.events = {
-    "click": function(e) {
-        if(Session.equals("selected", this._id)) {
-            Session.set("selected", null)
-        } else {
-            Session.set("selected", this._id)
-        }
+    "click": function(e, template) {
+        $(template.find(".modal")).modal()
     }
 }
 

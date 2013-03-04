@@ -68,7 +68,7 @@
 </template>
 
 <template name="eventPost">
-	{{#if selected}}
+	<!--
 		<div class="eventPost" style="background-color: {{color}}; width: 400px; height: auto;">
 			<h4>{{name}}</h4>
 			<img src="{{imgUrl}}" width=150>
@@ -77,14 +77,27 @@
 			<p class="organizer">{{organizer}}</p>
 			<p class="description">{{description}}</p>
 		</div>
-	{{else}}
-		<div class="eventPost" style="background-color: {{color}};">
-			<h4>{{name}}</h4>
+	-->
+	<div class="eventPost" style="background-color: {{color}};">
+		<h4>{{name}}</h4>
+		<p class="date">{{date}}</p>
+		<p class="location">{{location}}</p>
+		<p class="organizer">{{organizer}}</p>
+	</div>
+
+	<div class="modal hide fade" tabindex="-1" role="dialog">
+		<div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal">x</button>
+			<h3>{{name}}</h3>
+		</div>
+		<div class="modal-body">
+			<img src="{{imgUrl}}" width=150>
 			<p class="date">{{date}}</p>
 			<p class="location">{{location}}</p>
 			<p class="organizer">{{organizer}}</p>
+			<p class="description">{{description}}</p>
 		</div>
-	{{/if}}
+	</div>
 </template>
 
 
