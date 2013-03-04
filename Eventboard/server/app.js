@@ -47,7 +47,7 @@ Meteor.startup(function () {
 			"organizer" : "Qulturnämnd",
 			"description" : "We have board-games, cards, Magic and candy. What else do you need?",
 			"color" : "#FF7BAC",
-			"tags" : ["non-alcoholic", "games and films", "free"]
+			"tags" : ["non-alcoholic", "games", "free"]
 		},
 		{
 			"name" : "Movie-night",

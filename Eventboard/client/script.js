@@ -21,17 +21,30 @@ var filterdPosts = function() {
 }
 
 Template.header.allOtherTags = function() {
+    // Awesome code to select and sort possible tags by occurrence.
     var posts = filterdPosts()
     var tags = []
     var sessiontags = Session.get("tags")
     posts.map(function(post) {
         post.tags.map(function(tag){
-            if(tags.indexOf(tag) == -1 && sessiontags.indexOf(tag) == -1) {
-                tags.push(tag)
+            if(sessiontags.indexOf(tag) == -1) {
+                if(tags[tag]) {
+                    tags[tag] += 1
+                } else {
+                    tags[tag] = 1
+                }
             }
         })
     })
-    return tags
+    var t = []
+    for(var key in tags) {
+        t.push([key, tags[key]])
+    }
+    t = t.sort(function(a, b) {return b[1] - a[1]})
+    for(var i = 0; i < t.length; i++) {
+        t[i] = t[i][0]
+    }
+    return t
 }
 
 Template.header.events = {
