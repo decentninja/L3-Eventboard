@@ -60,7 +60,7 @@ Meteor.startup(function () {
 		},
 		{
 			"name" : "Maffia-gasque",
-			"date" : new Date("2013-03-22 19:00"),
+			"date" : new Date("2013-03-06 19:00"),
 			"location" : "Oasen",
 			"organizer" : "Sammhällsprogrammet KTH",
 			"description" : "We play the party-game Maffia, while having a great party. It is an offer you cannot refuse!",

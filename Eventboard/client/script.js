@@ -6,8 +6,8 @@ var filterdPosts = function() {
     var tags = Session.get("tags")
     var search = {
         $or: [
-                {date: {$gte: new Date()}},
-                {date: /every/}
+            {date: {$gte: new Date()}},
+            {date: /every/}
         ],
     }
     if(!(tags == undefined || tags.length == 0)) {
@@ -71,6 +71,26 @@ Template.eventPosts.rendered = function() {
 Template.eventPost.selected = function() {
     return Session.equals("selected", this._id) ? "selected" : ''
 }
+
+Template.eventPost.helpers({
+    date: function() {
+        if(typeof this.date == "string") {
+            return this.date
+        } else {
+            moment.lang('en', {
+                calendar : {
+                    lastDay : '[Yesterday], dddd HH:mm',
+                    sameDay : '[Today], dddd HH:mm',
+                    nextDay : '[Tomorrow], dddd HH:mm',
+                    lastWeek : '[last] dddd [at] HH:mm',
+                    nextWeek : 'dddd [at] HH:mm',
+                    sameElse : 'YYYY-MM-DD HH:mm'
+                }
+            });
+            return moment(this.date).calendar()
+        }
+    }
+})
 
 Template.eventPost.events = {
     "click": function(e) {
