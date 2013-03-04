@@ -4,24 +4,20 @@ Template.header.tags = function() {
 
 var filterdPosts = function() {
     var tags = Session.get("tags")
-    var dateor = [
+    var search = {
+        $or: [
                 {date: {$gte: new Date()}},
                 {date: /every/}
-            ]
-    if(tags == undefined || tags.length == 0) {
-        return eventPosts.find({
-            $or: dateor,
-        })
-    } else {
-        var posts = eventPosts.find({
-            tags: {$all: tags},
-            $or: dateor,
-        })
-        if(posts.count() == 0) {
-            return [];
-        }
-        return posts;
+        ],
     }
+    if(!(tags == undefined || tags.length == 0)) {
+        search.tags = {$all: tags}
+    }
+    var posts = eventPosts.find(search, {sort: {date: 1}})
+    if(posts.count() == 0) {
+        return [];
+    }
+    return posts
 }
 
 Template.header.allOtherTags = function() {
