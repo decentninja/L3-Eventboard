@@ -62,22 +62,9 @@ footer .copyRight {
 	text-align: center;
 }
 
-.date:before {
-	font-weight:bold;
-	content: "Date: ";
-}
-
-.location:before {
-	font-weight:bold;
-	content: "Location: ";
-}
-
-.organizer:before {
-	font-weight:bold;
-	content: "Organizer: ";
-}
-
-.description:before {
-	font-weight:bold;
-	content: "Description: ";
+.eventPost .c {
+	display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
 }

@@ -71,23 +71,14 @@
 </template>
 
 <template name="eventPost">
-	{{#if selected}}
-		<div class="eventPost" style="background-color: {{color}}; width: 400px; height: auto;">
-			<h4>{{name}}</h4>
-			<img src="{{imgUrl}}" width=150>
-			<p class="date">{{date}}</p>
-			<p class="location">{{location}}</p>
-			<p class="organizer">{{organizer}}</p>
-			<p class="description">{{description}}</p>
-		</div>
-	{{else}}
-		<div class="eventPost" style="background-color: {{color}};">
-			<h4>{{name}}</h4>
-			<p class="date">{{date}}</p>
-			<p class="location">{{location}}</p>
-			<p class="organizer">{{organizer}}</p>
-		</div>
-	{{/if}}
+	<div class="eventPost" style="background-color: {{color}}; height: auto;">
+		<h4>{{name}}</h4>
+		<img class="c" src="{{imgUrl}}" width=150>
+		<p class="c">{{location}} | {{date}}
+		</p>
+		<p>{{description}}</p>
+		<p class="c" style="font-style: italic">{{organizer}}</p>
+	</div>
 </template>
 
 
