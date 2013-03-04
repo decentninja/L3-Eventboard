@@ -4,11 +4,18 @@ Template.header.tags = function() {
 
 var filterdPosts = function() {
     var tags = Session.get("tags")
+    var dateor = [
+                {date: {$gte: new Date()}},
+                {date: /every/}
+            ]
     if(tags == undefined || tags.length == 0) {
-        return eventPosts.find({})
+        return eventPosts.find({
+            $or: dateor,
+        })
     } else {
         var posts = eventPosts.find({
-            tags: {$all: tags}
+            tags: {$all: tags},
+            $or: dateor,
         })
         if(posts.count() == 0) {
             return [];
