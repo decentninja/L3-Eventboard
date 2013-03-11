@@ -8,18 +8,6 @@ footer {
 	text-align: center;
 }
 
-.event_grid .eventPost {
-	margin: 10px;
-	width: 240px;
-	background-color: #FF7BAC;
-	padding-left: 15px;
-	padding-right: 15px;
-}
-
-.eventPost h4 {
-	text-align: center;
-}
-
 header #tags {
 	display:inline;
 	vertical-align: middle;
@@ -60,24 +48,4 @@ footer .copyRight {
 
 .event_grid .noposts {
 	text-align: center;
-}
-
-.date:before {
-	font-weight:bold;
-	content: "Date: ";
-}
-
-.location:before {
-	font-weight:bold;
-	content: "Location: ";
-}
-
-.organizer:before {
-	font-weight:bold;
-	content: "Organizer: ";
-}
-
-.description:before {
-	font-weight:bold;
-	content: "Description: ";
 }

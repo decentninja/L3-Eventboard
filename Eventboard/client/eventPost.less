@@ -1,0 +1,56 @@
+.event_grid .eventPost {
+	margin: 10px;
+	width: 240px;
+	padding-left: 15px;
+	padding-right: 15px;
+
+	.animatedPositionAndSize
+
+	img,.description {
+		display: none;
+	}
+}
+
+.event_grid .eventPost.eventPostModal {
+	.modal
+
+	img,.description {
+		display: block;
+	}
+}
+
+.event_grid .eventPost {
+	background-color: #FF7BAC;
+
+	h4 {
+		text-align: center;
+	}
+
+	.date:before {
+		font-weight:bold;
+		content: "Date: ";
+	}
+
+	.location:before {
+		font-weight:bold;
+		content: "Location: ";
+	}
+
+	.organizer:before {
+		font-weight:bold;
+		content: "Organizer: ";
+	}
+
+	.description:before {
+		font-weight:bold;
+		content: "Description: ";
+	}
+
+}
+
+.animatedPositionAndSize (@time: 1s) {
+	transition: width @time, height @time;
+	-moz-transition: width @time, height @time;
+	-webkit-transition: width @time, height @time;
+	-o-transition: width @time, height @time;
+}
