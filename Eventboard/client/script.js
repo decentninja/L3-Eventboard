@@ -81,16 +81,15 @@ Template.eventPosts.rendered = function() {
     }
 }
 
-Template.eventPost.selected = function() {
-    return Session.equals("selected", this._id) ? "selected" : ''
-}
-
 Template.eventPost.events = {
-    "click": function(e) {
-        if(Session.equals("selected", this._id)) {
-            Session.set("selected", null)
+    "click": function(e, template) {
+        var eventPost = template.find('.eventPost')
+        if(eventPost.className.match(/(?:^|\s)eventPostModal(?!\S)/)) {
+            eventPost.className = eventPost.className.replace(/(?:^|\s)eventPostModal(?!\S)/, '')
+            $('#event_grid').masonry()
         } else {
-            Session.set("selected", this._id)
+            eventPost.className += " eventPostModal"
+            $('#event_grid').masonry()
         }
     }
 }
