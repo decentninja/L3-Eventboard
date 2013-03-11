@@ -67,15 +67,7 @@ Template.eventPosts.rendered = function() {
         this._rendered = true
         $('#event_grid').masonry({
             itemSelector: '.eventPost',
-            isFitWidth: true,
-            /*
-            isAnimated: true,
-            animationOptions: {
-                duration: 100,
-                easing: 'linear',
-                queue: false
-            }
-            */
+            isFitWidth: true
         })
     } else {
         $('#event_grid').masonry('reload')
