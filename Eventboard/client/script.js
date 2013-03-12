@@ -77,8 +77,13 @@ Template.eventPosts.rendered = function() {
 Template.eventPost.events = {
     "click": function(e, template) {
         var eventPost = template.find('.eventPost')
-        if(eventPost.className.match(/(?:^|\s)eventPostModal(?!\S)/)) {
-            eventPost.className = eventPost.className.replace(/(?:^|\s)eventPostModal(?!\S)/, '')
+        var justClosing = eventPost.className.match(/(?:^|\s)eventPostModal(?!\S)/)
+        var toClose = justClosing ? eventPost : $('.eventPostModal').get(0)
+
+        if (toClose)
+            toClose.className = toClose.className.replace(/(?:^|\s)eventPostModal(?!\S)/, '')
+
+        if (justClosing) {
             $('#event_grid').masonry()
         } else {
             eventPost.className += " eventPostModal"
