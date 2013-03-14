@@ -83,11 +83,8 @@ Template.eventPost.events = {
         if (toClose)
             toClose.className = toClose.className.replace(/(?:^|\s)eventPostModal(?!\S)/, '')
 
-        if (justClosing) {
-            //$('#event_grid').masonry()
-        } else {
+        if (!justClosing) {
             eventPost.className += " eventPostModal"
-            //$('#event_grid').masonry()
         }
     }
 }
