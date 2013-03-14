@@ -84,11 +84,22 @@
 			<h3>{{name}}</h3>
 		</div>
 		<div class="modal-body">
-			<img src="{{imgUrl}}" width=150>
-			<p class="date">{{date}}</p>
-			<p class="location">{{location}}</p>
-			<p class="organizer">{{organizer}}</p>
-			<p class="description">{{description}}</p>
+			<div class="row-fluid">
+				<div class="span7">
+					<p>{{description}}</p>
+				</div>
+				<div class="span5">
+					{{#if imgUrl}}
+						<p>
+							<img src="{{imgUrl}}">
+						</p>
+					{{/if}}
+					
+					<p class="date">{{date}}</p>
+					<p class="location">{{location}}</p>
+					<p class="organizer">{{organizer}}</p>
+				</div>
+			</div>
 		</div>
 	</div>
 </template>

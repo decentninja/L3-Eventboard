@@ -102,3 +102,7 @@ footer .copyRight {
     margin-right: auto;
     text-align: center;
 }
+
+.modal table td {
+	border: none;
+}
