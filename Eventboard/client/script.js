@@ -4,31 +4,47 @@ Template.header.tags = function() {
 
 var filterdPosts = function() {
     var tags = Session.get("tags")
-    if(tags == undefined || tags.length == 0) {
-        return eventPosts.find({})
-    } else {
-        var posts = eventPosts.find({
-            tags: {$all: tags}
-        })
-        if(posts.count() == 0) {
-            return [];
-        }
-        return posts;
+    var search = {
+        $or: [
+            {date: {$gte: new Date()}},
+            {date: /every/}
+        ],
     }
+    if(!(tags == undefined || tags.length == 0)) {
+        search.tags = {$all: tags}
+    }
+    var posts = eventPosts.find(search, {sort: {date: 1}})
+    if(posts.count() == 0) {
+        return [];
+    }
+    return posts
 }
 
 Template.header.allOtherTags = function() {
+    // Awesome code to select and sort possible tags by occurrence.
     var posts = filterdPosts()
     var tags = []
     var sessiontags = Session.get("tags")
     posts.map(function(post) {
         post.tags.map(function(tag){
-            if(tags.indexOf(tag) == -1 && sessiontags.indexOf(tag) == -1) {
-                tags.push(tag)
+            if(sessiontags.indexOf(tag) == -1) {
+                if(tags[tag]) {
+                    tags[tag] += 1
+                } else {
+                    tags[tag] = 1
+                }
             }
         })
     })
-    return tags
+    var t = []
+    for(var key in tags) {
+        t.push([key, tags[key]])
+    }
+    t = t.sort(function(a, b) {return b[1] - a[1]})
+    for(var i = 0; i < t.length; i++) {
+        t[i] = t[i][0]
+    }
+    return t
 }
 
 Template.header.events = {
@@ -52,13 +68,14 @@ Template.eventPosts.rendered = function() {
         $('#event_grid').masonry({
             itemSelector: '.eventPost',
             isFitWidth: true,
-            
+            /*
             isAnimated: true,
             animationOptions: {
                 duration: 100,
                 easing: 'linear',
                 queue: false
             }
+            */
         })
     } else {
         $('#event_grid').masonry('reload')
@@ -68,6 +85,26 @@ Template.eventPosts.rendered = function() {
 Template.eventPost.selected = function() {
     return Session.equals("selected", this._id) ? "selected" : ''
 }
+
+Template.eventPost.helpers({
+    date: function() {
+        if(typeof this.date == "string") {
+            return this.date
+        } else {
+            moment.lang('en', {
+                calendar : {
+                    lastDay : '[Yesterday], dddd HH:mm',
+                    sameDay : '[Today], dddd HH:mm',
+                    nextDay : '[Tomorrow], dddd HH:mm',
+                    lastWeek : '[last] dddd [at] HH:mm',
+                    nextWeek : 'dddd [at] HH:mm',
+                    sameElse : 'YYYY-MM-DD HH:mm'
+                }
+            });
+            return moment(this.date).calendar()
+        }
+    }
+})
 
 Template.eventPost.events = {
     "click": function(e, template) {

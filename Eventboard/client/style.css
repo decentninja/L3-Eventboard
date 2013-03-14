@@ -51,6 +51,7 @@ header #add-tag {
 
 header .accordion-inner {
 	margin-top: 8px;
+	padding-top: 17px;
 }
 
 footer .copyRight {
@@ -85,9 +86,16 @@ footer .copyRight {
 }
 
 .modal-header {
-	border-bottom: none;
+	border: none;
 }
 
 .modal-backdrop {
 	background: none;
+}
+
+.eventPost .c {
+	display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
 }
