@@ -103,6 +103,11 @@ Template.eventPost.helpers({
             });
             return moment(this.date).calendar()
         }
+    },
+    short: function() {
+        // Get first 3 sentences in description.
+        console.log(this.description.match(/[^\.!\?]+[\.!\?]+/g).splice(0,1))
+        return this.description.match(/[^\.!\?]+[\.!\?]+/g)[0]
     }
 })
 
