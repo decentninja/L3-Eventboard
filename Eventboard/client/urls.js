@@ -13,12 +13,12 @@ var Router = Backbone.Router.extend({
 
 var router = new Router()
 
-Meteor.autorun(function() {
+function updateUrl() {
 	var tags = Session.get("tags")
 	if(tags != undefined) {
 		router.navigate(tags.join("/"), true)
 	}
-})
+}
 
 Meteor.startup(function () {
 	Backbone.history.start({pushState: true});
