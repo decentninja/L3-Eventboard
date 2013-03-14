@@ -50,12 +50,14 @@ Template.header.allOtherTags = function() {
 Template.header.events = {
     "click .add-tag-tag": function(e) {
         Session.set("tags", Session.get("tags").concat(e.target.text))
+        e.preventDefault()
         updateUrl()
     },
     "click .remove-tag-tag": function(e) {
         Session.set("tags", Session.get("tags").filter(function(o) {
             return o != e.target.text
         }))
+        e.preventDefault()
         updateUrl()
     }
 }
