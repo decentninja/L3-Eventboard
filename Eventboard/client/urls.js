@@ -14,10 +14,19 @@ var Router = Backbone.Router.extend({
 var router = new Router()
 
 Meteor.autorun(function() {
+	// auto update url
 	var tags = Session.get("tags")
+	var selected = Session.get("selected")
+	var url = ""
 	if(tags != undefined) {
-		router.navigate(tags.join("/"), true)
+		url += tags.join("/")
+	}/*
+	if(selected != null) {
+		url += ":" + selected
 	}
+	console.log(url)
+	*/
+	router.navigate(url, true)
 })
 
 Meteor.startup(function () {

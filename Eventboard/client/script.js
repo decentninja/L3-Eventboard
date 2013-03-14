@@ -106,7 +106,6 @@ Template.eventPost.helpers({
     },
     short: function() {
         // Get first 3 sentences in description.
-        console.log(this.description.match(/[^\.!\?]+[\.!\?]+/g).splice(0,1))
         return this.description.match(/[^\.!\?]+[\.!\?]+/g)[0]
     }
 })
@@ -114,6 +113,11 @@ Template.eventPost.helpers({
 Template.eventPost.events = {
     "click": function(e, template) {
         $(template.find(".modal")).modal()
+        if(Session.equals("selected", this._id)) {
+            Session.set("selected", null)
+        } else {
+            Session.set("selected", this._id)
+        }
     }
 }
 
