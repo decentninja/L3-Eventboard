@@ -6,8 +6,8 @@ var filterdPosts = function() {
     var tags = Session.get("tags")
     var search = {
         $or: [
-                {date: {$gte: new Date()}},
-                {date: /every/}
+            {date: {$gte: new Date()}},
+            {date: /every/}
         ],
     }
     if(!(tags == undefined || tags.length == 0)) {

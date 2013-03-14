@@ -5,12 +5,11 @@ Meteor.startup(function () {
       	{
       		"name" : "Language Café - English/French", 
       		"description" : "An event where you can improve your language-skills in a relaxed environment.  Get to know other people with the same interest in language and culture! Lunch is provided.",
-      		"date" : "every friday at 12:00",
+      		"date" : "Every friday at 12:00",
       		"location" : "KTH Library",
       		"organizer" : "KTH language and communication",
       		"color" : "#BDCCD4",
       		"tags" : ["free", "non-alcoholic", "learning", "food"],
-        	"imgUrl": "http://media.tumblr.com/tumblr_mbelgcuSll1rwy4eh.gif"
       	},
 		{
 		 	"name" : "Ovve-Gasque", 
@@ -20,11 +19,12 @@ Meteor.startup(function () {
 		  	"description" : "Celebrate whatever you want with us! Just bring you finest clothing…Ovven!",
 		  	"color" : "#3FA9F5",
 		  	"tags" : ["gasque", "food"],
-        	"imgUrl": "http://lh4.ggpht.com/-GQGEHNbfaZE/UB92zVaf32I/AAAAAAAAAFo/8A-QSrqJNoI/44784%252520-%252520animated%252520animation%252520Artist-3dapple%252520centi-pony%252520centipede%252520cuteweird%252520gif%252520Scrunchy_Face%252520Sweetiepede%252520Sweetie_Belle%252520what%252520what_has_science_done%252520wtf.gif"
+        	"imgUrl": "http://www.wermlandsnation.se/samojeden/wp-content/uploads/2010/10/gasque.jpg"
+			
 		},
 		{
 			"name" : "Lunch with Corporate America",
-			"date" : new Date("2013-03-14 12:00"),
+			"date" : new Date((new Date()).getTime() + 24 * 60 * 60 * 1000),
 			"location" : "E1, KTH",
 			"organizer" : "THS Näringsliv", 
 			"description" : "A talk about the future of Corporate America, learn money and eat lunch!",
@@ -60,7 +60,7 @@ Meteor.startup(function () {
 		},
 		{
 			"name" : "Maffia-gasque",
-			"date" : new Date("2013-03-22 19:00"),
+			"date" : new Date("2013-03-06 19:00"),
 			"location" : "Oasen",
 			"organizer" : "Sammhällsprogrammet KTH",
 			"description" : "We play the party-game Maffia, while having a great party. It is an offer you cannot refuse!",
@@ -90,7 +90,7 @@ Meteor.startup(function () {
 			"date" : new Date("2013-09-15 11:30"),
 			"location" : "Kitchen at Nymble",
 			"organizer" : "KTH health-committee",
-			"description" : "As we are all aware, students does not eat as well as they should. So we will teach you everything you need to know! How to make a sandwich, beg for change outside of your local grocery store, cook noodles and stealing.",
+			"description" : "As we are all aware, students does not eat as well as they should. So we will teach you Everything you need to know! How to make a sandwich, beg for change outside of your local grocery store, cook noodles and stealing.",
 			"color" : "#57E964",
 			"tags" : ["cooking", "food", "learning", "non-alcoholic"]
 		},
@@ -105,7 +105,7 @@ Meteor.startup(function () {
 		},
 		{
 			"name" : "ThursdayPub",
-			"date" : "every thursday At 17",
+			"date" : "Every thursday At 17",
 			"location" : "QMisk",
 			"organizer" : "QMisk",
 			"description" : "We have beer, some grub and maybe something else. Big surprise at 11.",
@@ -137,7 +137,8 @@ Meteor.startup(function () {
 			"organizer" : "SUS",
 			"description" : "We will play the DoD6. Snacks will be available, so bring your sword and prepare for a legendary adventure!",
 			"color" : "#FFE87C",
-			"tags" : ["games and films", "free", "non-alcoholic"]
+			"tags" : ["games and films", "free", "non-alcoholic"],
+			"imgUrl": "http://www.wallpaperpimper.com/wallpaper/Art_&_3D/Fantasy/Dnd-Dices-1-1024x768.jpg",
 		},
 		{
 			"name" : "Language Café - Japanese",
