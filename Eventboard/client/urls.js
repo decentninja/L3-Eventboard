@@ -2,12 +2,21 @@ var Router = Backbone.Router.extend({
 	routes: {
 		"*tags": "main",
 	},
-	main: function (url) {
-		if(url == "") {
+	main: function (path) {
+		if(path == "/") {
 			Session.set("tags", [])
-		} else {
-			Session.set("tags", url.split("/"))
+			Session.set("selected", null)
+			return
 		}
+		if(path.indexOf(":") !== -1) {
+			// set selected (modal)
+			var parts = path.split(":")
+			id = parts[1]
+			path = parts[0]
+			Session.set("selected", id)
+		}
+		var tags = path.split("/").filter(String)
+		Session.set("tags", tags)
 	},
 })
 
@@ -15,9 +24,15 @@ var router = new Router()
 
 function updateUrl() {
 	var tags = Session.get("tags")
-	if(tags != undefined) {
-		router.navigate(tags.join("/"), true)
+	var selected = Session.get("selected")
+	var url = "/"
+	if(tags.length != 0) {
+		url += tags.join("/")
 	}
+	if(selected != null) {
+		url += ":" + selected
+	}
+	router.navigate(url, true)
 }
 
 Meteor.startup(function () {

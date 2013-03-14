@@ -97,6 +97,7 @@ Template.eventPost.events = {
         } else {
             Session.set("selected", this._id)
         }
+        updateUrl()
     }
 }
 
