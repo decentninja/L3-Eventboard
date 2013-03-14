@@ -7,7 +7,7 @@ var filterdPosts = function() {
     var search = {
         $or: [
             {date: {$gte: new Date()}},
-            {date: /every/}
+            {date: /Every/}
         ],
     }
     if(!(tags == undefined || tags.length == 0)) {
