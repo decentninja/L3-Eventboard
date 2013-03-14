@@ -80,3 +80,14 @@ footer .copyRight {
 	font-weight:bold;
 	content: "Description: ";
 }
+.modal {
+	border-radius: 0;
+}
+
+.modal-header {
+	border-bottom: none;
+}
+
+.modal-backdrop {
+	background: none;
+}
