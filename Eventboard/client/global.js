@@ -2,7 +2,10 @@ function getFilteredPosts() {
     var tags = Session.get("tags")
     var search = {
         $or: [
-            {date: {$gte: new Date()}},
+            {date: {
+                $gte: Session.get("datefrom"), 
+                $lte: Session.get("dateto")
+            }},
             {date: /Every/}
         ],
     }

@@ -56,4 +56,24 @@
     	}
     })
 
+    Meteor.startup(function() {
+        Session.set("datefrom", new Date())
+        Session.set("dateto", moment().add("year", 1).toDate())
+    })
+
+    header.rendered = function() {
+        var settings = {
+            startDate: new Date(),
+            todayBtn: "linked",
+            todayHighlight: true
+        }
+        $('.from').datepicker(settings).on('changeDate', function(e){
+            Session.set("datefrom", e.date)
+        })
+        settings.todayBtn = false
+        $('.to').datepicker(settings).on('changeDate', function(e){
+            Session.set("dateto", e.date)
+        })
+    }
+
 })()
