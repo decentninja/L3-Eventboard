@@ -89,7 +89,7 @@ Template.eventPosts.rendered = function() {
 
 Template.eventPost.rendered = function() {
     if (Session.equals("selected", this.data._id)) {
-        $(this.find('.modal')).modal()
+        openModal(this.find('.modal'))
     }
 }
 
@@ -123,17 +123,22 @@ Template.eventPost.helpers({
 
 Template.eventPost.events = {
     "click": function(e, template) {
-        $(template.find(".modal")).modal()
-        if(Session.equals("selected", this._id)) {
-            Session.set("selected", null)
-        } else {
+        if(!Session.equals("selected", this._id)) {
+            openModal(template.find('.modal'))
             Session.set("selected", this._id)
+            updateUrl()
         }
-        updateUrl()
     }
 }
 
- Meteor.autorun(function () {
+function openModal(modalDiv) {
+    $(modalDiv).modal().on('hide', function() {
+        Session.set("selected", null)
+        updateUrl()
+    })
+}
+
+Meteor.autorun(function () {
     var tags = Session.get("tags")
     if(tags == undefined || tags.length == 0) {
         document.title = "The Eventboard"

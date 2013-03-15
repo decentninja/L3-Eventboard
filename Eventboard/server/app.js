@@ -4,7 +4,7 @@ Meteor.startup(function () {
       var stuff= [
       	{
       		"name" : "Language Café - English/French", 
-      		"description" : "An event where you can improve your language-skills in a relaxed environment.  Get to know other people with the same interest in language and culture! Lunch is provided.",
+      		"description" : "An event where you can improve your language-skills in a relaxed environment. Learn by listening or by talking to others.  Get to know other people with the same interest in language and culture and get to know people from other countries! Lunch is provided.",
       		"date" : "Every friday at 12:00",
       		"location" : "KTH Library",
       		"organizer" : "KTH language and communication",
@@ -16,7 +16,7 @@ Meteor.startup(function () {
 		 	"date" : new Date(2013, 10, 24, 18, 00),
 		 	"location" : "KTH Haninge",
 		 	"organizer" : "Qlubbmästeriet Haninge",
-		  	"description" : "Celebrate whatever you want with us! Just bring you finest clothing…Ovven!",
+		  	"description" : "Celebrate whatever you want with us! This is the time where the new students get to try on their new clothing: the famous overall. You can also come and just party with us, there will be alot of music and dancing! If you want to, you can also trade your patches with other students.  Just bring you finest clothing…Ovven!",
 		  	"color" : "#3FA9F5",
 		  	"tags" : ["gasque", "food"],
         	"imgUrl": "http://www.wermlandsnation.se/samojeden/wp-content/uploads/2010/10/gasque.jpg"
@@ -27,7 +27,7 @@ Meteor.startup(function () {
 			"date" : new Date((new Date()).getTime() + 24 * 60 * 60 * 1000),
 			"location" : "E1, KTH",
 			"organizer" : "THS Näringsliv", 
-			"description" : "A talk about the future of Corporate America, learn money and eat lunch!",
+			"description" : "A talk about the future of Corporate America, learn money and eat lunch! Learn how ideas work and how we want trade to work.",
 			"color" : "#FF931E",
 			"tags" : ["food", "non-alcoholic", "free"],
 			"imgUrl" : "http://lfort.files.wordpress.com/2010/01/corporate_flag.jpg",
@@ -37,7 +37,7 @@ Meteor.startup(function () {
 			"date" : new Date("2013-04-13 15:00"),
 			"location" : "SU",
 			"organizer" : "Dunderligan",
-			"description" : "Likes barbeque? Wanna party? Come party with us! The grills will be lit at 16:00 and food should be sold shortly after. BYOB.",
+			"description" : "Likes barbeque? Wanna party? Come party with us! The grills will be lit at 16:00 and food should be sold shortly after. Enjoy spring with us with a nice barbeque and relax and forget about all the homework and stress. BYOB.",
 			"color" : "#7AC943",
 			"tags" : ["festival", "food", "free"]
 		},
@@ -46,7 +46,7 @@ Meteor.startup(function () {
 			"date" : new Date("2013-05-23 17:17"),
 			"location" : "META",
 			"organizer" : "Qulturnämnd",
-			"description" : "We have board-games, cards, Magic and candy. What else do you need?",
+			"description" : "We have board-games, cards, Magic and candy. What else do you need? Bring friends and get to know other gamers, while trying to win. See you there!",
 			"color" : "#FF7BAC",
 			"tags" : ["non-alcoholic", "games", "free"]
 		},
@@ -55,7 +55,7 @@ Meteor.startup(function () {
 			"date" : new Date("2013-05-02 20:00"),
 			"location" : "Elektro KTH",
 			"organizer" : "Elektros kulturnämnd",
-			"description" : "We are going to watch the Star Wars-movies in the Ernst Rister order. It is going to be legendary!",
+			"description" : "We are going to watch the Star Wars-movies in the Ernst Rister order. It is going to be legendary! Want to watch a movie you have never seen and get to know others while discussing how good/bad the movie was? Then come and bring chips!",
 			"color" : "#E7A1B0",
 			"tags" : ["non-alcoholic", "games and films", "free"]
 		},
@@ -64,7 +64,7 @@ Meteor.startup(function () {
 			"date" : new Date("2013-03-06 19:00"),
 			"location" : "Oasen",
 			"organizer" : "Sammhällsprogrammet KTH",
-			"description" : "We play the party-game Maffia, while having a great party. It is an offer you cannot refuse!",
+			"description" : "We play the party-game Maffia, while having a great party. It is an offer you cannot refuse! Come and have a good laugh.",
 			"color" : "#F75D59",
 			"tags" : ["gasque", "food"]
 		},
@@ -73,7 +73,7 @@ Meteor.startup(function () {
 			"date" : new Date("2013-05-30 20:00"),
 			"location" : "Nymble",
 			"organizer" : "Chemistry KTH",
-			"description" : "Put on your finest gown or tail-coat, and prepare for a night with fine dining and dancing with KTH Chemistry.",
+			"description" : "Put on your finest gown or tail-coat, and prepare for a night with fine dining and dancing with KTH Chemistry. Enjoy dancing waltz with someone new or enjoy watching others dance this classical dance. It will be an evening to remember!",
 			"color" : "#FFE87C",
 			"tags" : ["banquette", "dancing"]
 		},
