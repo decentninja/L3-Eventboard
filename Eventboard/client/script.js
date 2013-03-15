@@ -86,6 +86,13 @@ Template.eventPosts.rendered = function() {
     }
 }
 
+
+Template.eventPost.rendered = function() {
+    if (Session.equals("selected", this.data._id)) {
+        $(this.find('.modal')).modal()
+    }
+}
+
 Template.eventPost.selected = function() {
     return Session.equals("selected", this._id) ? "selected" : ''
 }
