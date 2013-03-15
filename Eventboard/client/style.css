@@ -14,6 +14,8 @@ footer {
 	background-color: #FF7BAC;
 	padding-left: 15px;
 	padding-right: 15px;
+	padding-top: 5px;
+	padding-bottom: 5px;
 }
 
 .eventPost h4 {
@@ -80,4 +82,27 @@ footer .copyRight {
 .description:before {
 	font-weight:bold;
 	content: "Description: ";
+}
+.modal {
+	border-radius: 0;
+	padding: 10px;
+}
+
+.modal-header {
+	border: none;
+}
+
+.modal-backdrop {
+	background: black;
+}
+
+.eventPost .c {
+	display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.modal table td {
+	border: none;
 }

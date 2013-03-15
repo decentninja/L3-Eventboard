@@ -7,7 +7,7 @@ var filterdPosts = function() {
     var search = {
         $or: [
             {date: {$gte: new Date()}},
-            {date: /every/}
+            {date: /Every/}
         ],
     }
     if(!(tags == undefined || tags.length == 0)) {
@@ -90,8 +90,33 @@ Template.eventPost.selected = function() {
     return Session.equals("selected", this._id) ? "selected" : ''
 }
 
+Template.eventPost.helpers({
+    date: function() {
+        if(typeof this.date == "string") {
+            return this.date
+        } else {
+            moment.lang('en', {
+                calendar : {
+                    lastDay : '[Yesterday], dddd HH:mm',
+                    sameDay : '[Today], dddd HH:mm',
+                    nextDay : '[Tomorrow], dddd HH:mm',
+                    lastWeek : '[last] dddd [at] HH:mm',
+                    nextWeek : 'dddd [at] HH:mm',
+                    sameElse : 'YYYY-MM-DD HH:mm'
+                }
+            });
+            return moment(this.date).calendar()
+        }
+    },
+    short: function() {
+        // Get first 3 sentences in description.
+        return this.description.match(/[^\.!\?]+[\.!\?]+/g)[0]
+    }
+})
+
 Template.eventPost.events = {
-    "click": function(e) {
+    "click": function(e, template) {
+        $(template.find(".modal")).modal()
         if(Session.equals("selected", this._id)) {
             Session.set("selected", null)
         } else {
