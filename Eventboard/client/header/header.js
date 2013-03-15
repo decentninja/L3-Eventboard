@@ -70,7 +70,6 @@
         $('.from').datepicker(settings).on('changeDate', function(e){
             Session.set("datefrom", e.date)
         })
-        settings.todayBtn = false
         $('.to').datepicker(settings).on('changeDate', function(e){
             Session.set("dateto", e.date)
         })
