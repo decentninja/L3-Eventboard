@@ -1,0 +1,40 @@
+<template name="header">
+	<h1>The Eventboard of</h1>
+	<a id="sort" class="btn btn-link" href="#"><i class="icon-home"></i> Login <span class="caret"></span></a>
+	<h2 id="tags">
+		{{#if tags}}
+			{{#each tags}}
+				<a class="remove-tag-tag" href="#">{{this}}</a>
+			{{/each}}
+		{{else}}
+			all
+		{{/if}}
+		events
+	</h2>
+	<a
+  		id="add-tag"
+  		class="btn btn-link dropdown-toggle"
+  		data-toggle="collapse"
+  		href="#add-tag-collapse"
+  	>
+  		<i class="icon-tags"></i>
+  		Filters
+  		<span class="caret"></span>
+  	</a>
+    <div id="add-tag-collapse" class="accordion-body collapse out">
+		<div class="accordion-inner">
+			<i class="icon-tag"></i>
+			{{#if allOtherTags}}
+				{{#each allOtherTags}}
+					<a class="add-tag-tag" href="#">{{this}}</a>
+					|
+				{{/each}}
+			{{else}}
+				Click on tags to remove them for more events. 
+			{{/if}}
+			{{#if tags}}
+				<a href="/"><i class="icon-trash"></i></a>
+			{{/if}}
+		</div>
+	</div>
+</template>

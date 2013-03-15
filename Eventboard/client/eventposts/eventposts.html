@@ -1,0 +1,48 @@
+<template name="eventPosts">
+	{{#if eventPostsData}}
+		{{#each eventPostsData}}
+			{{> eventPost}}
+		{{/each}}
+	{{else}}
+		<p class="noposts">
+			No events under this tag.
+		</p>
+	{{/if}}
+</template>
+
+<template name="eventPost">
+	<div class="eventPost" style="background-color: {{color}}; height: auto;">
+		<h4>{{name}}</h4>
+		<p>{{date}} @ {{location}}
+		</p>
+		<p>{{short}}</p>
+		<p class="c" style="font-style: italic">{{organizer}}</p>
+	</div>
+
+	<div class="modal hide fade" style="background-color: {{color}};" tabindex="-1" role="dialog">
+		<div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal">&times;</button>
+			<h3>{{name}}</h3>
+		</div>
+		<div class="modal-body">
+			<div class="row-fluid">
+				<div class="span7">
+					<p>{{description}}</p>
+				</div>
+				<div class="span5">
+					{{#if imgUrl}}
+						<p>
+							<img src="{{imgUrl}}">
+						</p>
+					{{/if}}
+					<p class="date">{{date}}</p>
+					<p class="organizer">{{organizer}}</p>
+					<p>
+						<img src="mapmock.png">
+					</p>
+					<p class="location">{{location}}</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</template>

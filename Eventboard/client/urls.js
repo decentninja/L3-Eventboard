@@ -1,40 +1,43 @@
-var Router = Backbone.Router.extend({
-	routes: {
-		"*tags": "main",
-	},
-	main: function (path) {
-		if(path == "/") {
-			Session.set("tags", [])
-			Session.set("selected", null)
-			return
+(function() {
+
+	var Router = Backbone.Router.extend({
+		routes: {
+			"*tags": "main",
+		},
+		main: function (path) {
+			if(path == "/") {
+				Session.set("tags", [])
+				Session.set("selected", null)
+				return
+			}
+			if(path.indexOf(":") !== -1) {
+			    // set selected (modal)
+			    var parts = path.split(":")
+			    id = parts[1]
+			    path = parts[0]
+			    Session.set("selected", id)
+			}
+			var tags = path.split("/").filter(String)
+			Session.set("tags", tags)
+		},
+	})
+
+	var router = new Router()
+
+	updateUrl = function () { //var defined in global.js
+		var tags = Session.get("tags")
+		var selected = Session.get("selected")
+		var url = "/"
+		if(tags.length != 0) {
+			url += tags.join("/")
 		}
-		if(path.indexOf(":") !== -1) {
-			// set selected (modal)
-			var parts = path.split(":")
-			id = parts[1]
-			path = parts[0]
-			Session.set("selected", id)
+		if(selected != null) {
+			url += ":" + selected
 		}
-		var tags = path.split("/").filter(String)
-		Session.set("tags", tags)
-	},
-})
-
-var router = new Router()
-
-function updateUrl() {
-	var tags = Session.get("tags")
-	var selected = Session.get("selected")
-	var url = "/"
-	if(tags.length != 0) {
-		url += tags.join("/")
+		router.navigate(url, true)
 	}
-	if(selected != null) {
-		url += ":" + selected
-	}
-	router.navigate(url, true)
-}
 
-Meteor.startup(function () {
-	Backbone.history.start({pushState: true});
-});
+	Meteor.startup(function () {
+		Backbone.history.start({pushState: true})
+	})
+})()
