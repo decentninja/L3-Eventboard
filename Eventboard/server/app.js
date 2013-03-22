@@ -9,7 +9,7 @@ Meteor.startup(function () {
       		"location" : "KTH Library",
       		"organizer" : "KTH language and communication",
       		"color" : "#BDCCD4",
-      		"tags" : ["free", "non-alcoholic", "learning", "food"]
+      		"tags" : ["free", "non-alcoholic", "learning", "food"],
       		"imgUrl" : "http://www.pegcitygrub.com.php53-13.ord1-1.websitetestlink.com/wp-content/uploads/2013/01/lepideble.jpg"
       	},
 		{
