@@ -1,11 +1,10 @@
 <template name="eventPosts">
-	{{#if eventPostsData}}
+	{{#if eventPostsData or eventPostsData.length}}
 		{{#each eventPostsData}}
 			{{> eventPost}}
 		{{/each}}
 	{{else}}
 		<div class="noposts">
-			No events under this tag.
 			<img src="/octobozz.jpeg">
 		</div>
 	{{/if}}
