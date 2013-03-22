@@ -35,7 +35,7 @@ Meteor.startup(function () {
 		},
 		{
 			"name" : "Dunder och Brak Barbeque festival! - Nubbedraget.", 
-			"date" : new Date("2013-04-13 15:00"),
+			"date" : new Date("2013-04-23 15:00"),
 			"location" : "SU",
 			"organizer" : "Dunderligan",
 			"description" : "Likes barbeque? Wanna party? Come party with us! The grills will be lit at 16:00 and food should be sold shortly after. Enjoy spring with us with a nice barbeque and relax and forget about all the homework and stress. BYOB.",
@@ -65,7 +65,7 @@ Meteor.startup(function () {
 		},
 		{
 			"name" : "Maffia-gasque",
-			"date" : new Date("2013-03-06 19:00"),
+			"date" : new Date("2013-05-06 19:00"),
 			"location" : "Oasen",
 			"organizer" : "Sammhällsprogrammet KTH",
 			"description" : "We play the party-game Maffia, while having a great party. It is an offer you cannot refuse! Come and have a good laugh.",
